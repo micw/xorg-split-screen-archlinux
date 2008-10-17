@@ -3,7 +3,7 @@
 
 pkgname=xorg-server
 pkgver=1.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc="X.Org X servers"
 arch=('i686' 'x86_64')
 license=('custom')
@@ -80,6 +80,9 @@ build() {
   # Needed for non-mesa drivers, libgl will restore it
   mv "${pkgdir}/usr/lib/xorg/modules/extensions/libglx.so" \
      "${pkgdir}/usr/lib/xorg/modules/extensions/libglx.xorg" || return 1
+
+  mv "${pkgdir}/usr/lib/xorg/modules/extensions/libdri.so" \
+     "${pkgdir}/usr/lib/xorg/modules/extensions/libdri.xorg" || return 1
 
   install -m755 -d "${pkgdir}/usr/share/licenses/${pkgname}"
   install -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/" || return 1
