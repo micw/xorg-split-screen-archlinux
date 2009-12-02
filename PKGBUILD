@@ -68,7 +68,7 @@ build() {
 	      --enable-kdrive \
               --enable-install-setuid \
               --enable-config-hal \
-      	      --enable-config-dbus \
+      	      --disable-config-dbus \
       	      --disable-record \
       	      --disable-xfbdev \
       	      --disable-xfake \
