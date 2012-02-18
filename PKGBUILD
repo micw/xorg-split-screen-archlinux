@@ -3,7 +3,7 @@
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xdmx' 'xorg-server-xvfb' 'xorg-server-xnest' 'xorg-server-common' 'xorg-server-devel')
 pkgver=1.11.99.903
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://xorg.freedesktop.org"
@@ -51,6 +51,9 @@ build() {
       --enable-xephyr \
       --enable-glx-tls \
       --enable-kdrive \
+      --enable-kdrive-evdev \
+      --enable-kdrive-kbd \
+      --enable-kdrive-mouse \
       --enable-install-setuid \
       --enable-config-udev \
       --disable-config-dbus \
