@@ -3,7 +3,7 @@
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xdmx' 'xorg-server-xvfb' 'xorg-server-xnest' 'xorg-server-common' 'xorg-server-devel')
 pkgver=1.13.0.902
-pkgrel=1
+pkgrel=2
 arch=('i686' 'x86_64')
 license=('custom')
 url="http://xorg.freedesktop.org"
@@ -35,7 +35,7 @@ build() {
 #  patch -Np1 -i "${srcdir}/git-fixes.patch"
 
   # Use pixman 0.28.0 glyph cache - backported from git master
-  patch -Np1 -i "${srcdir}/use-pixman-glyph-cache.patch"
+#  patch -Np1 -i "${srcdir}/use-pixman-glyph-cache.patch"
 
   # Use nouveau/nv/nvidia drivers for nvidia devices
   patch -Np1 -i "${srcdir}/autoconfig-nvidia.patch"
