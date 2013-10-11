@@ -1,4 +1,5 @@
 # Maintainer: Ionut Biru <ibiru@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=gtk3
 pkgver=3.10.1
