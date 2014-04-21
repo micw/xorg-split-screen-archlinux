@@ -3,7 +3,7 @@
 
 pkgname=gtk3
 pkgver=3.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc="GObject-based multi-platform GUI toolkit (v3)"
 arch=(i686 x86_64)
 url="http://www.gtk.org/"
