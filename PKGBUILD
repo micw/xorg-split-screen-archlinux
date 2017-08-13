@@ -4,7 +4,7 @@
 pkgbase=gtk3
 pkgname=(gtk3 gtk-update-icon-cache gtk3-print-backends)
 pkgver=3.22.18
-pkgrel=1
+pkgrel=2
 pkgdesc="GObject-based multi-platform GUI toolkit"
 arch=(i686 x86_64)
 url="http://www.gtk.org/"
@@ -35,6 +35,7 @@ pkgver() {
 prepare() {
   mkdir print-backends
   cd gtk+
+  git cherry-pick -n 340c520bd04e0000f731573f020546fc142bd474
   NOCONFIGURE=1 ./autogen.sh
 }
 
