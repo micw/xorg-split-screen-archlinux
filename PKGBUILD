@@ -106,7 +106,7 @@ build() {
 
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
-  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap xorg-fonts-misc)
+  depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
 
   cd "${pkgbase}-${pkgver}"
   install -m755 -d "${pkgdir}/usr/share/licenses/xorg-server-common"
