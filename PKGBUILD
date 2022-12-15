@@ -63,9 +63,11 @@ _commit=3e6fd55ee00d4209ce2f2af292829e4d6f674adc  # tags/3.24.38^0
 source=(
   "git+https://gitlab.gnome.org/GNOME/gtk.git#commit=$_commit"
   gtk-query-immodules-3.0.hook
+  multiple_monitors_per_output.patch
 )
 sha256sums=('SKIP'
-            'a0319b6795410f06d38de1e8695a9bf9636ff2169f40701671580e60a108e229')
+            'a0319b6795410f06d38de1e8695a9bf9636ff2169f40701671580e60a108e229'
+            'SKIP')
 
 pkgver() {
   cd gtk
@@ -74,6 +76,7 @@ pkgver() {
 
 prepare() {
   cd gtk
+  patch -p2 < ../multiple_monitors_per_output.patch
 }
 
 build() {
