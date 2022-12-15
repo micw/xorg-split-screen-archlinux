@@ -22,6 +22,7 @@ source=(https://xorg.freedesktop.org/releases/individual/xserver/${pkgbase}-${pk
         xvfb-run.1
         xephyr_Dont_check_for_SeatId_anymore.patch
         0001-present-Send-a-PresentConfigureNotify-event-for-dest.patch
+        randr_split_screen.patch
 )
 validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF'  # Peter Hutterer (Who-T) <office@who-t.net>
               '67DC86F2623FC5FD4BB5225D14706DBE1E4B4540'  # Olivier Fourdan <fourdan@xfce.org>
@@ -31,7 +32,8 @@ sha512sums=('6104b3620ed2e1e27d9a8e963388bbe8785a764585b1bc03dbf5d719a92894773dd
             '672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49'
             'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22'
             '34de52147054535256f35143d321e4d5e189baae502afca2bd3291094946dbead0829b1f196ae2a4d23bd6d0e1e04b65a387dee43f12dee55d247e37aec419d7'
-            'bc7d054bef2b4550d067b3abb14eb7c534e5022ba0b0e59e14687886fe204914757b014c31150bce705baed5d8cb1be87e8624da43cb1fe874b138ced00ee18b')
+            'bc7d054bef2b4550d067b3abb14eb7c534e5022ba0b0e59e14687886fe204914757b014c31150bce705baed5d8cb1be87e8624da43cb1fe874b138ced00ee18b'
+            'e6f8d2e1273c96e6f90f5f26ccfa1dcbf33c652abf36cce507517828e1372777d720e49d7bc247611927762fda67afd10f1d191583ae288edc9a274325515a33')
 
 prepare() {
   cd ${pkgbase}-$pkgver
@@ -40,6 +42,7 @@ prepare() {
   patch -Np1 -i ../xephyr_Dont_check_for_SeatId_anymore.patch
   # upstream fix (merged)
   patch -Np1 -i ../0001-present-Send-a-PresentConfigureNotify-event-for-dest.patch
+  patch -Np1 -i ../randr_split_screen.patch
 }
 
 build() {
