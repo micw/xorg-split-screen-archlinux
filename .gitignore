@@ -1,0 +1,5 @@
+trunk/src/
+trunk/pkg/
+trunk/*.pkg.tar.zst
+trunk/*.tar.xz
+trunk/*.tar.xz.sig
