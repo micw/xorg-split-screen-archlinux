@@ -1,0 +1,4 @@
+gtk/
+src/
+pkg/
+*.pkg.tar.zst
